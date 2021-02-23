@@ -96,7 +96,6 @@
                 </div>
 
                 <div>
-                <iframe width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiYmRlYTcxMzgtYTg5NC00MDU0LTg5ZjMtYTcyNTg4MDMzMzQ4IiwidCI6IjY2MDRiODcwLWQzNGItNDBjNy04MDQyLWM0NjkyNjMyNDA4ZSIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>
 
 
             </div>
