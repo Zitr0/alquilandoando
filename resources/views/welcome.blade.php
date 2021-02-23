@@ -96,35 +96,7 @@
                 </div>
 
                 <div>
-                    <!-- Edit -->
-                        @if($userData['edit'])
-                        <form method='post' action='/save'>
-                        <table>
-                            <tr>
-                            <td colspan='2'><h1>Edit record</h1></td>
-                            </tr>
-                            <tr>
-                            <td colspan="2">{{ csrf_field() }}</td>
-                            </tr>
-                            <tr>
-                            <td>Username</td>
-                            <td><input type='text' name='uname' readonly value='{{ $userData["editData"]->username }}' ></td>
-                            </tr>
-                            <tr>
-                            <td>Name</td>
-                            <td><input type='text' name='name' value='{{ $userData["editData"]->name }}'></td>
-                            </tr> 
-                            <tr>
-                            <td>Email</td>
-                            <td><input type='email' name='email' value='{{ $userData["editData"]->email }}' ></td>
-                            </tr>
-                            <tr>
-                            <td>&nbsp;<input type='hidden' value='{{ $userData["edit"] }}' name='editid'></td>
-                            <td><input type='submit' name='submit' value='Submit'></td>
-                            </tr>
-                        </table>
-                </div>
-
+                <iframe width="600" height="373.5" src="https://app.powerbi.com/view?r=eyJrIjoiYmRlYTcxMzgtYTg5NC00MDU0LTg5ZjMtYTcyNTg4MDMzMzQ4IiwidCI6IjY2MDRiODcwLWQzNGItNDBjNy04MDQyLWM0NjkyNjMyNDA4ZSIsImMiOjR9" frameborder="0" allowFullScreen="true"></iframe>
 
 
             </div>
