@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Alquilandoando__
+                    Alquilandoando_
                 </div>
 
                 <div class="links">
