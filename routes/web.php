@@ -17,8 +17,13 @@ Route::get('/', function () {
 
 */
 
-Route::get('/', 'UserController@index');
-Route::post('users', 'UserController@store')->name('users.store');
-Route::delete('users/{user}', 'UserController@destroy')->name('users.destroy');
 
+Route::get('/', 'UserController@index')->middleware('auth');
+Route::post('users', 'UserController@store')->name('users.store')->middleware('auth');
+Route::delete('users/{user}', 'UserController@destroy')->name('users.destroy')->middleware('auth');
 
+// Route::resource('users', 'UserController')->middleware('auth');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

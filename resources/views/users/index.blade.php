@@ -1,43 +1,38 @@
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-    <head>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>Alquilandoando</title>
+@section('content')
 
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@200;600&display=swap" rel="stylesheet">
-
-         <!-- Bootstrap -->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
-
-    </head>
-    <body>
-        <div class='container'>
+<div class='container'>
             <div class='row'>
                 <div class="col-sm-8 mx-auto">
 
-                    <div class="card">
-
-                        <form action="{{  route('users.store')  }}" method="POST">
-                            <div class="row">
-                                <div class="col-sm-3">
-                                    <input type="text" name="name" class="form-control" placeholder="Nombre">
+                    <div class="card border-0 shadow">
+                        <div class="card-body">
+                            <form action="{{  route('users.store')  }}" method="POST">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <input type="text" name="name" class="form-control" placeholder="Nombre" value="{{ old('name') }}">
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input type="text" name="email" class="form-control" placeholder="Email" value="{{ old('email') }}">
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <input type="password" name="password" class="form-control" placeholder="Contraseña">
+                                    </div>
+                                    <div class="col-auto">
+                                        @csrf
+                                        <button type="submit" class="btn btn-primary mb-2">Enviar</button>
+                                    </div> 
                                 </div>
-                                 <div class="col-sm-4">
-                                    <input type="text" name="email" class="form-control" placeholder="Email">
-                                </div>
-                                <div class="col-sm-3">
-                                    <input type="password" name="password" class="form-control" placeholder="Contraseña">
-                                </div>
-                                <div class="col-auto">
-                                    @csrf
-                                    <button type="submit" class="btn btn-primary mb-2">Enviar</button>
-                                </div> 
+                            </form>
+                            @if($errors->any())
+                            <div class="alert alert-danger">
+                                @foreach($errors->all() as $error)
+                                - {{ $error }} <br>
+                                @endforeach
                             </div>
-                        </form>
-
+                            @endif
+                        </div>
                     </div>
                          
                     <table class='table'>
@@ -73,5 +68,5 @@
                 </div>
             </div>
         </div>  
-    </body>
-</html>
+@endsection
+
