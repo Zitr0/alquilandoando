@@ -46,27 +46,29 @@
                         </thead>
                         <tbody>
                             @foreach($users as $user)
-                            <tr>
-                                <td>{{ $user-> id }}</td>
-                                <td>{{ $user-> name }}</td>
-                                <td>{{ $user-> email }}</td>
-                                <td>
-                                    <form action="{{  route('users.destroy', $user ) }}" method="POST">
-                                        @method('DELETE')
-                                        @csrf
-                                        <input 
-                                            type="submit" 
-                                            value="Eliminar" 
-                                            class="btn btn-sm btn-danger"
-                                            onclick="return confirm('¿Desea eliminar a {{ $user->name  }} ?')">
-                                    </form>
-                                </td>
-                            </tr>
+                                @if($user-> id !=  Auth::user()->id)
+                                    <tr>
+                                        <td>{{ $user-> id }}</td>
+                                        <td>{{ $user-> name }}</td>
+                                        <td>{{ $user-> email }}</td>   
+                                        <td>
+                                            <form action="{{  route('users.destroy', $user ) }}" method="POST">
+                                                @method('DELETE')
+                                                @csrf
+                                                <input 
+                                                    type="submit" 
+                                                    value="Eliminar" 
+                                                    class="btn btn-sm btn-danger"
+                                                    onclick="return confirm('¿Desea eliminar a {{ $user->name  }} ?')">
+                                            </form> 
+                                        </td> 
+                                    </tr>
+                                @endif    
                             @endforeach
                         </tbody>
                     </table>
                 </div>
             </div>
-        </div>  
+</div>  
 @endsection
 

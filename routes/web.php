@@ -17,6 +17,9 @@ Route::get('/', function () {
 
 */
 
+Route::get('/', function () {
+    return view('welcome');
+});
 
 Route::get('/', 'UserController@index')->middleware('auth');
 Route::post('users', 'UserController@store')->name('users.store')->middleware('auth');

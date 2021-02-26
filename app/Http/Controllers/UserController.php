@@ -11,7 +11,10 @@ class UserController extends Controller
 
     public function index()
     {
-        $users = User::latest()->get();
+
+        $users = User::latest()
+                      //  ->where('id', '!=' , 'users.id')
+                        ->get();
         //$users = User::get();
 
         return view('users.index', [
